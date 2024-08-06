@@ -187,6 +187,9 @@ Add mapping for OpenTelemetry attribute <code class="literal">messaging.destinat
 <li class="listitem">
 APM Server now automatically retries document-level 429s from Elasticsearch to avoid dropping data. <code class="literal">output.elasticsearch.max_retries</code> now controls both request-level and document-level retries, and defaults to <code class="literal">3</code>. <a href="https://github.com/elastic/apm-server/pull/13620" class="ulink" target="_top">13620</a>
 </li>
+<li class="listitem">
+Fix memory limit fallback check bytes to GB conversion <a href="https://github.com/elastic/apm-server/pull/13838" class="ulink" target="_top">13838</a>
+</li>
 </ul>
 </div>
 </div>
