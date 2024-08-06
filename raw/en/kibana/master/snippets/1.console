@@ -1,5 +1,2 @@
-POST /_security/user/jacknich
-{
-  "password" : "t0pS3cr3t",
-  "roles" : [ "kibana_admin" ]
-}
+PUT .kibana*/_settings?expand_wildcards=all
+{"index.blocks.write":null }

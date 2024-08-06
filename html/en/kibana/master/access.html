@@ -224,6 +224,46 @@ When one or more Kibana-backing indices are unhealthy, the <code class="literal"
 </ol>
 </div>
 <p>For more information, refer to our <a href="/blog/troubleshooting-kibana-health" class="ulink" target="_top">walkthrough on troubleshooting Kibana Health</a>.</p>
+<h3><a id="index-write-block"></a>Troubleshoot Kibana index write block<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/kibana/edit/main/docs/setup/access.asciidoc">edit</a></h3>
+<p>Kibana temporarily sets an <a href="/guide/en/elasticsearch/reference/master/index-modules-blocks.html" class="ulink" target="_top">Elasticsearch index <code class="literal">write</code> block</a> during its upgrade&#8217;s <a class="xref" href="saved-object-migrations.html" title="Migrate saved objects">Saved Object Migration</a>. If it is unable to successfully complete this migration, it may not reset this override for its <code class="literal">.kibana*</code> backing indices and so the Kibana logs will error variations like</p>
+<div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-text">[.kibana] blocked by: [FORBIDDEN/8/index write (api)];: cluster_block_exception Root causes: cluster_block_exception: index [.kibana] blocked by: [FORBIDDEN/8/index write (api)];</pre>
+</div>
+<p>This can occur when</p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+an Elasticsearch Service or Elastic Cloud Enterprise Deployment upgrade plan is cancelled by user
+</li>
+<li class="listitem">
+Elasticsearch is experiencing an underlying issue during Kibana&#8217;s migration, most commonly related to Elasticsearch errors
+</li>
+<li class="listitem">
+<a href="/guide/en/elasticsearch/reference/master/size-your-shards.html#troubleshooting-max-shards-open" class="ulink" target="_top"><code class="literal">this action would add [x] total shards, but this cluster currently has [y]/[z] maximum shards open</code></a>
+</li>
+<li class="listitem">
+<a href="/guide/en/elasticsearch/reference/master/fix-watermark-errors.html" class="ulink" target="_top"><code class="literal">disk usage exceeded flood-stage watermark, index has read-only-allow-delete block</code></a>
+</li>
+</ul>
+</div>
+<p>The underlying Elasticsearch issue should be resolved first. Afterwards, you may need to manually resolve by either</p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+<p>removing the Elasticsearch index write block via an <a href="/guide/en/elasticsearch/reference/master/indices-update-settings.html" class="ulink" target="_top">update index settings</a></p>
+<div class="pre_wrapper lang-console">
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-console">PUT .kibana*/_settings?expand_wildcards=all
+{"index.blocks.write":null }</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/1.console"></div>
+</li>
+<li class="listitem">
+<a class="xref" href="upgrade-migrations-rolling-back.html" title="Roll back to a previous version of Kibana">rollback to previous version of Kibana</a>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div><div class="navfooter">
