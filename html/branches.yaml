@@ -7297,7 +7297,7 @@ elasticsearch-py:
   Elasticsearch Guide/docs/examples/8.12: 8cdf9b276ac3acd1f29576905426bcacbbb41a4c
   Elasticsearch Guide/docs/examples/8.13: 07a2c9ec43e25037e0b8d32dfff1ac439a143601
   Elasticsearch Guide/docs/examples/8.14: 7bbcac84870ef31ac89d537d7315b5f73e61c8ac
-  Elasticsearch Guide/docs/examples/8.15: 0868d57ac2171ff7dfde1dd4591792431a1dcf9d
+  Elasticsearch Guide/docs/examples/8.15: local
   Elasticsearch Guide/docs/examples/8.2: 6b75155f7106929f32f9ddca215bd657c94052fd
   Elasticsearch Guide/docs/examples/8.3: f6e065667dd9a28b4a329b2601759060e6bf7445
   Elasticsearch Guide/docs/examples/8.4: 8b06afe698dfe0156529f56b48b69830b2c81f54
@@ -7316,7 +7316,7 @@ elasticsearch-py:
   Python Client/docs/guide/8.12: 8cdf9b276ac3acd1f29576905426bcacbbb41a4c
   Python Client/docs/guide/8.13: 07a2c9ec43e25037e0b8d32dfff1ac439a143601
   Python Client/docs/guide/8.14: 7bbcac84870ef31ac89d537d7315b5f73e61c8ac
-  Python Client/docs/guide/8.15: cefe19b748ccd1cff5703367075b9b4e25586605
+  Python Client/docs/guide/8.15: local
   Python Client/docs/guide/8.2: 6b75155f7106929f32f9ddca215bd657c94052fd
   Python Client/docs/guide/8.3: f6e065667dd9a28b4a329b2601759060e6bf7445
   Python Client/docs/guide/8.4: 8b06afe698dfe0156529f56b48b69830b2c81f54
