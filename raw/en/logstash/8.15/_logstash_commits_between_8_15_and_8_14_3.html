@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Logstash Commits between 8.15 and 8.14.3 | Logstash Reference [8.15] | Elastic</title>
+<meta class="elastic" name="content" content="Logstash Commits between 8.15 and 8.14.3 | Logstash Reference [8.15]">
+
+<link rel="home" href="index.html" title="Logstash Reference [8.15]"/>
+<link rel="up" href="releasenotes.html" title="Release Notes"/>
+<link rel="prev" href="logstash-8-15-0.html" title="Logstash 8.15.0 Release Notes"/>
+<link rel="next" href="_logstash_plugin_release_changelogs.html" title="Logstash Plugin Release Changelogs"/>
+<meta class="elastic" name="product_version" content="8.15"/>
+<meta class="elastic" name="product_name" content="Logstash"/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/Logstash/Reference/8.15"/>
+<meta name="DC.subject" content="Logstash"/>
+<meta name="DC.identifier" content="8.15"/>
+<meta name="robots" content="noindex,nofollow"/>
+</head>
+<body>
+<div class="page_header">
+This documentation contains work-in-progress information for future Elastic Stack and Cloud releases. Use the version selector to view supported release docs. It also contains some Elastic Cloud serverless information. Check out our <a href="https://www.elastic.co/docs/current/serverless">serverless docs</a> for more details.
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="logstash-8-15-0.html">« Logstash 8.15.0 Release Notes</a>
+</span>
+<span class="next">
+<a href="_logstash_plugin_release_changelogs.html">Logstash Plugin Release Changelogs »</a>
+</span>
+</div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference [8.15]</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="releasenotes.html">Release Notes</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Logstash Commits between 8.15 and 8.14.3</h1></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="_logstash_commits_between_8_15_and_8_14_3"></a>Logstash Commits between 8.15 and 8.14.3</h2>
+</div></div></div>
+<p>Computed with "git log --pretty=format:'%h -%d %s (%cr) &lt;%an&gt;' --abbrev-commit --date=relative v8.14.3..8.15"</p>
+<p>0ab0e759c - (HEAD &#8594; 8.15, origin/8.15) [Bugfix] Resolve the array and char (single | double quote) escaped values of ${ENV} (#16365) (#16371) (14 hours ago) &lt;github-actions[bot]&gt;
+0dd7d41c4 - bump lock file for 8.15 (#16369) (2 days ago) &lt;github-actions[bot]&gt;
+8735847a7 - Fix 8.13.1 release notes (#16363) (#16367) (8 days ago) &lt;github-actions[bot]&gt;
+46b996c24 - settings: add support for observing settings after post-process hooks (#16339) (#16348) (2 weeks ago) &lt;github-actions[bot]&gt;
+b6bf12d86 - Doc: Reposition worker-utilization in doc (#16335) (#16337) (3 weeks ago) &lt;github-actions[bot]&gt;
+4f34601a4 - correctly handle stack overflow errors during pipeline compilation (#16323) (#16336) (3 weeks ago) &lt;github-actions[bot]&gt;
+3624a82c5 - Update major plugin versions in gemfile lock for 8.15.0 (#16330) (3 weeks ago) &lt;github-actions[bot]&gt;
+e99e5bc82 - regenerate webserver test certificates (#16331) (#16333) (3 weeks ago) &lt;github-actions[bot]&gt;
+bbfc9279c - Release notes for 8.14.3 (#16312) (#16321) (4 weeks ago) &lt;github-actions[bot]&gt;
+aef289ce9 - Remove Debian 10 from CI (#16300) (#16317) (4 weeks ago) &lt;github-actions[bot]&gt;
+eae379b6d - Add Ubuntu 24.04 to CI (#16299) (#16302) (4 weeks ago) &lt;github-actions[bot]&gt;
+2c926c240 - Remove CentOS 7 from CI (#16293) (#16296) (5 weeks ago) &lt;github-actions[bot]&gt;
+5d3d3fe8c - Release notes for 8.14.2 (#16266) (#16285) (5 weeks ago) &lt;Ry Biesemeyer&gt;
+447cacec6 - add flow-informed tuning guidance (#16265) (#16289) (5 weeks ago) &lt;github-actions[bot]&gt;
+9572a6bdb - Update plugin versions in gemfile lock (#16283) (5 weeks ago) &lt;github-actions[bot]&gt;
+86af05753 - Add base lock file for 8.15.0 (5 weeks ago) &lt;João Duarte&gt;
+121b1c963 - update jruby to 9.4.8.0 (#16278) (5 weeks ago) &lt;João Duarte&gt;
+a046d3f27 - Revert "add ubuntu 24.04 to CI (#16263)" (#16279) (5 weeks ago) &lt;João Duarte&gt;
+a0bcd61ad - add ubuntu 24.04 to CI (#16263) (5 weeks ago) &lt;João Duarte&gt;
+7080ec542 - Add retries to aarch64 CI pipeline (#16271) (5 weeks ago) &lt;Dimitrios Liappis&gt;
+095733c40 - Doc: Add ecs and datastream requirement for intg filter (#16268) (6 weeks ago) &lt;Karen Metts&gt;
+784fa186c - Ensure pipeline metrics are cleared on the pipeline shutdown (#16264) (6 weeks ago) &lt;Edmo Vamerlatti Costa&gt;
+0cfe6b080 - Add <code class="literal">RubyEvent#dup</code> support and unit test case to keep <code class="literal">Json#dump(Event)</code> safe. (#16255) (6 weeks ago) &lt;Mashhur&gt;
+0e1d67eda - produce wolfi docker image in ci (#16252) (6 weeks ago) &lt;João Duarte&gt;
+bc0b9556b - Add quotes to fix path handling in pqcheck.bat (#16205) (6 weeks ago) &lt;Alex S&gt;
+e6682c94b - Pin fileutils version to 1.7+ (#16250) (6 weeks ago) &lt;Mashhur&gt;
+0ec16ca39 - Unicode pipeline and plugin ids (#15971) (6 weeks ago) &lt;Ry Biesemeyer&gt;
+440aa98e4 - [CI] Benchmark pipeline (#16191) (7 weeks ago) &lt;kaisecheng&gt;
+92909cb1c - json: remove unnecessary dup/freeze in serialization (#16213) (7 weeks ago) &lt;Ry Biesemeyer&gt;
+ca1403009 - Forwardport PR #16212 to main: Release notes for 8.14.1 (#16214) (7 weeks ago) &lt;github-actions[bot]&gt;
+321e407e5 - Avoid to log file not found errors when DLQ segments are removed concurrently between writer and reader. (#16204) (7 weeks ago) &lt;Andrea Selva&gt;
+ed930f820 - Avoid mocking the value returned in global SETTINGS constant. (#16245) (7 weeks ago) &lt;Andrea Selva&gt;
+0d385a961 - Update pull-requests.json (#16220) (7 weeks ago) &lt;ev1yehor&gt;
+13a8c4f1a - remove version pinning from rexml (#16224) (7 weeks ago) &lt;João Duarte&gt;
+801f0f441 - Geoip database management cache invalidation (#16222) (7 weeks ago) &lt;Ry Biesemeyer&gt;
+148461440 - Wolfi-based image flavor (#16189) (7 weeks ago) &lt;João Duarte&gt;
+0f6fa5c8f - p2p: adds opt-in pipeline bus with less synchronization (#16194) (7 weeks ago) &lt;Ry Biesemeyer&gt;
+fab345881 - Introduce filesystem signalling from DLQ read to writer to update byte size metric accordingly when the reader uses <code class="literal">clean_consumed</code> (#16195) (7 weeks ago) &lt;Andrea Selva&gt;
+948a0edf1 - Logstash monitoring doc improvements. (#16208) (8 weeks ago) &lt;Mashhur&gt;
+7f424c1f5 - Update logstash_releases.json to account for 7.17.22 (#16185) (8 weeks ago) &lt;João Duarte&gt;
+881f7605f - Bump logstash-releases.json after 8.14.1 release (#16217) (8 weeks ago) &lt;Edmo Vamerlatti Costa&gt;
+23221cadd - Pin rexml gem version to 3.2.6 (#16209) (8 weeks ago) &lt;Edmo Vamerlatti Costa&gt;
+efa83787a - Revert PR #16050 (9 weeks ago) &lt;Andrea Selva&gt;
+70d0f1d02 - Release notes for 8.14.0 (#16155) (#16198) (9 weeks ago) &lt;github-actions[bot]&gt;
+14afa851d - Bump <code class="literal">logstash-releases.json</code> after 8.14.0 release (#16197) (9 weeks ago) &lt;Rob Bavey&gt;
+5c7d41679 - Update log4j rollover to configure time retention (#16179) (9 weeks ago) &lt;Andrea Selva&gt;
+d0606ff09 - Bundle logstash-integration-snmp and remove input-snmp and input-snmptrap as default (#16180) (9 weeks ago) &lt;Edmo Vamerlatti Costa&gt;
+e2acb4d6b - Add incomplete integration plugins to metadata.json as skip (#16174) (10 weeks ago) &lt;Karen Metts&gt;
+1d4038b27 - Add initial buildkite pipeline for Benchmark (#16190) (10 weeks ago) &lt;kaisecheng&gt;
+2a7f05975 - Upgrade jrjackson to 0.4.20 (#16153) (3 months ago) &lt;João Duarte&gt;
+ea930861e - PQ: avoid blocking writer when precisely full (#16176) (3 months ago) &lt;Ry Biesemeyer&gt;
+d0bdc33fa - Regenerate dependencies report and add strscan. (#16169) (3 months ago) &lt;Mashhur&gt;
+73fb21b4a - Update plugins-metadata.json (#16137) (3 months ago) &lt;Karen Metts&gt;
+979d30d70 - Handle non-unicode payload in Logstash. (#16072) (3 months ago) &lt;Mashhur&gt;
+53d948017 - [DOC] Remove reference to puppet LS module (#12356) (3 months ago) &lt;Luca Belluccini&gt;
+439fbebe2 - Update catalog-info.yaml to properly define dependencies type. (#16163) (3 months ago) &lt;Mashhur&gt;
+977ef89a7 - Updated to 21.0.3+9 (#16055) (3 months ago) &lt;Andrea Selva&gt;
+f781578c3 - Update catalog-info.yaml (#16161) (3 months ago) &lt;Andres Rodriguez&gt;
+734405dcb - Replace stack traces with logger in DSL. (#16159) (3 months ago) &lt;Mashhur&gt;
+2eebfd8f0 - Adds section to describe intended usage of <code class="literal">pipeline.buffer.type</code> (#16083) (3 months ago) &lt;Andrea Selva&gt;
+8e8a5b08d - Updated target and source Java definitions in build.gradle becuase deprecated and planned for removal in next major (#16156) (3 months ago) &lt;Andrea Selva&gt;
+1e431b47c - Update releases inventory after 8.13.4 (#16147) (3 months ago) &lt;Andrea Selva&gt;
+21148f160 - Set correct pipeline ownership (#16149) (3 months ago) &lt;Andres Rodriguez&gt;
+0d6ba8d1b - Allow comments in hashes and before EOF (#16058) (3 months ago) &lt;Jonas L. B&gt;
+3068934c6 - upgrade java_input_example to 1.0.3 (#16152) (3 months ago) &lt;João Duarte&gt;
+0d6117173 - update multiple dependencies (#16136) (3 months ago) &lt;João Duarte&gt;
+001fea643 - Release notes for 8.13.4 (#16144) (#16150) (3 months ago) &lt;github-actions[bot]&gt;
+6dd277005 - remove unused root Dockerfiles (#16140) (3 months ago) &lt;João Duarte&gt;
+9e452d2e5 - Update junit 4 13 (#16138) (3 months ago) &lt;Ry Biesemeyer&gt;
+973c2ba3a - force ruby-maven-libs constraint to &gt;= 3.9.6.1 (#16130) (3 months ago) &lt;João Duarte&gt;
+359a24a3e - Release notes for 8.13.3 (#16108) (#16128) (3 months ago) &lt;kaisecheng&gt;
+bf8846d4a - Update logstash_releases.json (#16123) (3 months ago) &lt;kaisecheng&gt;
+4350855e7 - upgrade jruby to 9.4.7.0 (#16125) (3 months ago) &lt;João Duarte&gt;
+830733d75 - (origin/8.10.2) Provide opt-in flag to avoid fields name clash when log format is json (#15969) (4 months ago) &lt;Andrea Selva&gt;
+6bf1f80a8 - bump version to 8.15.0 (#16088) (4 months ago) &lt;kaisecheng&gt;
+f4d33cb90 - add 8.14 branch for ci (#16086) (4 months ago) &lt;kaisecheng&gt;
+cb45cd28c - Doc: Remove include statements for screenshots not rendering properly (#15981) (4 months ago) &lt;Karen Metts&gt;</p>
+</div>
+</div>
+</div><div class="navfooter">
+<span class="prev">
+<a href="logstash-8-15-0.html">« Logstash 8.15.0 Release Notes</a>
+</span>
+<span class="next">
+<a href="_logstash_plugin_release_changelogs.html">Logstash Plugin Release Changelogs »</a>
+</span>
+</div>
+</body>
+</html>

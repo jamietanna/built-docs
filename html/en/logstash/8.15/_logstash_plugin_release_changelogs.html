@@ -3,13 +3,13 @@
   <head>
     
 <meta charset="UTF-8">
-<title>Logstash 8.13.2 Release Notes | Logstash Reference [8.15] | Elastic</title>
-<meta class="elastic" name="content" content="Logstash 8.13.2 Release Notes | Logstash Reference [8.15]">
+<title>Logstash Plugin Release Changelogs | Logstash Reference [8.15] | Elastic</title>
+<meta class="elastic" name="content" content="Logstash Plugin Release Changelogs | Logstash Reference [8.15]">
 
 <link rel="home" href="index.html" title="Logstash Reference [8.15]"/>
 <link rel="up" href="releasenotes.html" title="Release Notes"/>
-<link rel="prev" href="logstash-8-13-3.html" title="Logstash 8.13.3 Release Notes"/>
-<link rel="next" href="logstash-8-13-1.html" title="Logstash 8.13.1 Release Notes"/>
+<link rel="prev" href="_logstash_commits_between_8_15_and_8_14_3.html" title="Logstash Commits between 8.15 and 8.14.3"/>
+<link rel="next" href="logstash-8-14-3.html" title="Logstash 8.14.3 Release Notes"/>
 <meta class="elastic" name="product_version" content="8.15"/>
 <meta class="elastic" name="product_name" content="Logstash"/>
 <meta class="elastic" name="website_area" content="documentation"/>
@@ -107,10 +107,10 @@ This documentation contains work-in-progress information for future Elastic Stac
 </div>
 <div class="navheader">
 <span class="prev">
-<a href="logstash-8-13-3.html">« Logstash 8.13.3 Release Notes</a>
+<a href="_logstash_commits_between_8_15_and_8_14_3.html">« Logstash Commits between 8.15 and 8.14.3</a>
 </span>
 <span class="next">
-<a href="logstash-8-13-1.html">Logstash 8.13.1 Release Notes »</a>
+<a href="logstash-8-14-3.html">Logstash 8.14.3 Release Notes »</a>
 </span>
 </div>
 <div class="book" lang="en">
@@ -121,34 +121,157 @@ This documentation contains work-in-progress information for future Elastic Stac
 <span class="chevron-right">›</span><span class="breadcrumb-link"><a href="releasenotes.html">Release Notes</a></span>
 </div>
 <div>
-<div><h1 class="title"><a id="id-1"></a>Logstash 8.13.2 Release Notes</h1></div>
+<div><h1 class="title"><a id="id-1"></a>Logstash Plugin Release Changelogs</h1></div>
 </div>
 <!--EXTRA-->
 </div>
 <div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="logstash-8-13-2"></a>Logstash 8.13.2 Release Notes</h2>
+<h2 class="title"><a id="_logstash_plugin_release_changelogs"></a>Logstash Plugin Release Changelogs</h2>
 </div></div></div>
+<p>Computed from "git diff v8.14.3..8.15 *.release"
+Changed plugin versions:
+logstash-filter-de_dot: 1.0.4 &#8594; 1.1.0
+logstash-filter-elastic_integration: 0.1.10 &#8594; 0.1.13
+logstash-filter-geoip: 7.2.13 &#8594; 7.3.0
+logstash-filter-http: 1.5.1 &#8594; 1.6.0
+logstash-input-http_poller: 5.5.1 &#8594; 5.6.0
+logstash-input-redis: 3.7.0 &#8594; 3.7.1
+logstash-input-snmp: 1.3.3 &#8594; 1.3.3
+logstash-input-snmptrap: 3.1.0 &#8594; 3.1.0
+logstash-integration-aws: 7.1.6 &#8594; 7.1.8
+logstash-integration-kafka: 11.4.2 &#8594; 11.5.1
+logstash-integration-snmp: 4.0.4 &#8594; 4.0.4
+logstash-mixin-http_client: 7.3.0 &#8594; 7.4.0
+logstash-output-http: 5.6.1 &#8594; 5.7.0
+logstash-output-redis: 5.0.0 &#8594; 5.2.0
+---------- GENERATED CONTENT ENDS HERE ------------</p>
+<div class="section">
+<div class="titlepage"><div><div>
+<h3 class="title"><a id="_plugins"></a>Plugins</h3>
+</div></div></div>
+<p><span class="strong strong"><strong>De_dot Filter - 1.1.0</strong></span></p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Update Dockerfile to fix publishing of docker images to Docker Hub registry <a href="https://github.com/elastic/logstash/pull/16059" class="ulink" target="_top">#16059</a>
+Add support for recursively searching sub-fields with the new <code class="literal">recusive =&gt;</code> config option <a href="https://github.com/logstash-plugins/logstash-filter-de_dot/pull/24" class="ulink" target="_top">#24</a>
 </li>
 </ul>
 </div>
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_plugins_7"></a>Plugins</h3>
-</div></div></div>
-<p><span class="strong strong"><strong>Elasticsearch Output - 11.22.5</strong></span></p>
+<p><span class="strong strong"><strong>Elastic_integration Filter - 0.1.13</strong></span></p>
+<p>404: Not Found</p>
+<p><span class="strong strong"><strong>Geoip Filter - 7.3.0</strong></span></p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-[DOC] Correctly document default data stream name (<code class="literal">logs-generic-default</code>) <a href="https://github.com/logstash-plugins/logstash-output-elasticsearch/pull/1140" class="ulink" target="_top">#1140</a>
+Added support for MaxMind GeoIP2 Enterprise and Anonymous-IP databases (<a href="https://github.com/logstash-plugins/logstash-filter-geoip/pull/223" class="ulink" target="_top">#223</a>)
 </li>
 <li class="listitem">
-[DOC] Add note that ecs-compatibility is required for data streams to work properly <a href="https://github.com/logstash-plugins/logstash-output-elasticsearch/pull/1174" class="ulink" target="_top">#1174</a>
+Updated MaxMind dependencies.
+</li>
+<li class="listitem">
+Added tests for the Java classes.
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Http Filter - 1.6.0</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Added new <code class="literal">ssl_enabled</code> setting for enabling/disabling the SSL configurations <a href="https://github.com/logstash-plugins/logstash-filter-http/pull/52" class="ulink" target="_top">#52</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Http_poller Input - 5.6.0</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Added new <code class="literal">ssl_enabled</code> setting for enabling/disabling the SSL configurations <a href="https://github.com/logstash-plugins/logstash-input-http_poller/pull/146" class="ulink" target="_top">#146</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Redis Input - 3.7.1</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Add documentation to "threads" option <a href="https://github.com/logstash-plugins/logstash-input-redis/pull/95" class="ulink" target="_top">#95</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Snmp Input - 1.3.3</strong></span></p>
+<p><span class="strong strong"><strong>Snmptrap Input - 3.1.0</strong></span></p>
+<p><span class="strong strong"><strong>Aws Integration - 7.1.8</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+adding all supported storage classes for s3 output <a href="https://github.com/logstash-plugins/logstash-integration-aws/pull/49" class="ulink" target="_top">#49</a>
+</li>
+<li class="listitem">
+Remove empty temporary dirs at plugin close <a href="https://github.com/logstash-plugins/logstash-integration-aws/pull/46" class="ulink" target="_top">#46</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Kafka Integration - 11.5.1</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Specify that only headers with UTF-8 encoded values are supported in extended decoration <a href="https://github.com/logstash-plugins/logstash-integration-kafka/pull/174" class="ulink" target="_top">#174</a>
+</li>
+<li class="listitem">
+Add "auto_create_topics" option to allow disabling of topic auto creation <a href="https://github.com/logstash-plugins/logstash-integration-kafka/pull/172" class="ulink" target="_top">#172</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Snmp Integration - 4.0.4</strong></span></p>
+<p><span class="strong strong"><strong>Http_client Mixin - 7.4.0</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Adds new <code class="literal">ssl_enabled</code> setting for enabling/disabling the SSL configurations <a href="https://github.com/logstash-plugins/logstash-mixin-http_client/pull/44" class="ulink" target="_top">#44</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Http Output - 5.7.0</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Added new <code class="literal">ssl_enabled</code> setting for enabling/disabling the SSL configurations <a href="https://github.com/logstash-plugins/logstash-output-http/pull/144" class="ulink" target="_top">#144</a>
+</li>
+</ul>
+</div>
+<p><span class="strong strong"><strong>Redis Output - 5.2.0</strong></span></p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Added support to SSL/TLS configurations <a href="https://github.com/logstash-plugins/logstash-output-redis/pull/69" class="ulink" target="_top">#69</a>
+</li>
+<li class="listitem">
+<code class="literal">ssl_enabled</code>
+</li>
+<li class="listitem">
+<code class="literal">ssl_certificate_authorities</code>
+</li>
+<li class="listitem">
+<code class="literal">ssl_certificate</code>
+</li>
+<li class="listitem">
+<code class="literal">ssl_key</code>
+</li>
+<li class="listitem">
+<code class="literal">ssl_verification_mode</code>
+</li>
+<li class="listitem">
+<code class="literal">ssl_supported_protocols</code>
+</li>
+<li class="listitem">
+<code class="literal">ssl_cipher_suites</code>
+</li>
+<li class="listitem">
+Added basic support for SSL  <a href="https://github.com/logstash-plugins/logstash-output-redis/pull/59" class="ulink" target="_top">#59</a>
+</li>
+<li class="listitem">
+Fixed documentation of required settings <a href="https://github.com/logstash-plugins/logstash-output-redis/pull/61" class="ulink" target="_top">#61</a>
 </li>
 </ul>
 </div>
@@ -158,10 +281,10 @@ Update Dockerfile to fix publishing of docker images to Docker Hub registry <a h
 </div>
 </div><div class="navfooter">
 <span class="prev">
-<a href="logstash-8-13-3.html">« Logstash 8.13.3 Release Notes</a>
+<a href="_logstash_commits_between_8_15_and_8_14_3.html">« Logstash Commits between 8.15 and 8.14.3</a>
 </span>
 <span class="next">
-<a href="logstash-8-13-1.html">Logstash 8.13.1 Release Notes »</a>
+<a href="logstash-8-14-3.html">Logstash 8.14.3 Release Notes »</a>
 </span>
 </div>
 
