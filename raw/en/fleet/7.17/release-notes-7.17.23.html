@@ -66,6 +66,17 @@ Update Fleet Server Go version to 1.21.11. <a href="https://github.com/elastic/f
 </dd>
 </dl>
 </div>
+<h4><a id="known-issues-7.17.23"></a>Known issues<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/ingest-docs/edit/7.17/docs/en/ingest-management/release-notes/release-notes-7.17.asciidoc">edit</a></h4>
+<details id="known-issue-issue-5259">
+<summary class="title">After upgrading to version 8.14 or 8.15 Elastic Agent rolls back to 7.17.23.</summary>
+<div class="content">
+<p><span class="strong strong"><strong>Details</strong></span></p>
+<p>A problem has been found that after Elastic Agent is upgraded from version 7.17.23 to an 8.14.x or 8.15.x version, after a period of time the agent rolls back to the original version.</p>
+<p><span class="strong strong"><strong>Impact</strong></span><br></p>
+<p>This issue appears to affect only Elastic Agent version 7.17.23. As a workaround, it&#8217;s recommended to avoid upgrading agents to 7.17.23.</p>
+<p>If you already have agents on that version and you plan to upgrade, consider upgrading first to a lower 8.x version as an interim, rather than upgrading directly to version 8.14 or 8.15.</p>
+</div>
+</details>
 </div>
 </div>
 </div><div class="navfooter">
