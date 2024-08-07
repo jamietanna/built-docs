@@ -1,9 +1,6 @@
-POST _render/template
+PUT _ml/trained_models/elastic__distilbert-base-uncased-finetuned-conll03-english/definition/0
 {
-  "id": "my-search-template",
-  "params": {
-    "query_string": "hello world",
-    "from": 20,
-    "size": 10
-  }
+    "definition": "...",
+    "total_definition_length": 265632637,
+    "total_parts": 64
 }

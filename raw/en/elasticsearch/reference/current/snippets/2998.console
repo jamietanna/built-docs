@@ -1,13 +1,1 @@
-PUT music/_doc/1?refresh
-{
-  "suggest": [
-    {
-      "input": "Nevermind",
-      "weight": 10
-    },
-    {
-      "input": "Nirvana",
-      "weight": 3
-    }
-  ]
-}
+POST _ml/trained_models/my_model/deployment/_start?deployment_id=my_model_for_ingest

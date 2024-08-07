@@ -1,18 +1,11 @@
-PUT my-dfs-index
+GET /sensor_rollup/_rollup_search
 {
-  "settings": {
-    "number_of_shards": 2,
-    "number_of_replicas": 1
-  },
-  "mappings": {
-      "properties": {
-        "my-keyword": { "type": "keyword" }
+  "size": 0,
+  "aggregations": {
+    "max_temperature": {
+      "max": {
+        "field": "temperature"
       }
     }
+  }
 }
-
-POST my-dfs-index/_bulk?refresh=true
-{ "index" : { "_id" : "1" } }
-{ "my-keyword" : "a" }
-{ "index" : { "_id" : "2" } }
-{ "my-keyword" : "b" }

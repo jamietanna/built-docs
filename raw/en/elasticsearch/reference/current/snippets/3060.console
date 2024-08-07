@@ -1,9 +1,36 @@
-POST /_snapshot/my_repository/my_snapshot/_mount?wait_for_completion=true
+GET example-index/_search
 {
-  "index": "my_docs",
-  "renamed_index": "docs",
-  "index_settings": {
-    "index.number_of_replicas": 0
-  },
-  "ignore_index_settings": [ "index.refresh_interval" ]
+    "retriever": {
+        "rrf": {
+            "retrievers": [
+                {
+                    "standard": {
+                        "query": {
+                            "term": {
+                                "text": "rrf"
+                            }
+                        }
+                    }
+                },
+                {
+                    "knn": {
+                        "field": "vector",
+                        "query_vector": [3],
+                        "k": 5,
+                        "num_candidates": 5
+                    }
+                }
+            ],
+            "rank_window_size": 5,
+            "rank_constant": 1
+        }
+    },
+    "size": 3,
+    "aggs": {
+        "int_count": {
+            "terms": {
+                "field": "integer"
+            }
+        }
+    }
 }

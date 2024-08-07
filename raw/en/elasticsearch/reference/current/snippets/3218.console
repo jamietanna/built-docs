@@ -1,4 +1,11 @@
-PUT /_snapshot/my_repository/source_snapshot/_clone/target_snapshot
+POST /_security/_query/role
 {
-  "indices": "index_a,index_b"
+  "query": {
+    "match": {
+      "description": {
+        "query": "user access"
+      }
+    }
+  },
+  "size": 1
 }

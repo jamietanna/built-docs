@@ -1,6 +1,4 @@
-PUT /_nodes/USpTGYaBSIKbgSUJR2Z9lg/shutdown
+POST _ml/anomaly_detectors/low_request_rate/_flush
 {
-  "type": "restart",
-  "reason": "Demonstrating how the node shutdown API works",
-  "allocation_delay": "10m"
+  "calc_interim": true
 }

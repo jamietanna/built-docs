@@ -1,10 +1,31 @@
-POST _application/search_application/my-app/_search
+GET example-index/_search
 {
-  "params": {
-    "query_string": "my first query",
-    "text_fields": [
-      {"name": "title", "boost": 5},
-      {"name": "description", "boost": 1}
-    ]
-  }
+    "retriever": {
+        "rrf": {
+            "retrievers": [
+                {
+                    "standard": {
+                        "query": {
+                            "term": {
+                                "text": "blue shoes sale"
+                            }
+                        }
+                    }
+                },
+                {
+                    "standard": {
+                        "query": {
+                            "sparse_vector":{
+                                "field": "ml.tokens",
+                                "inference_id": "my_elser_model",
+                                "query": "What blue shoes are on sale?"
+                            }
+                        }
+                    }
+                }
+            ],
+            "rank_window_size": 50,
+            "rank_constant": 20
+        }
+    }
 }

@@ -1,28 +1,13 @@
-POST _watcher/watch/_execute
+PUT /_security/cross_cluster/api_key/VuaCfGcBCdbkQm-e5aOx
 {
-  "watch" : {
-    "trigger" : { "schedule" : { "interval" : "10s" } },
-    "input" : {
-      "search" : {
-        "request" : {
-          "indices" : [ "logs" ],
-          "body" : {
-            "query" : {
-              "match" : { "message": "error" }
-            }
-          }
-        }
+  "access": {
+    "replication": [
+      {
+        "names": ["archive"]
       }
-    },
-    "condition" : {
-      "compare" : { "ctx.payload.hits.total" : { "gt" : 0 }}
-    },
-    "actions" : {
-      "log_error" : {
-        "logging" : {
-          "text" : "Found {{ctx.payload.hits.total}} errors in the logs"
-        }
-      }
-    }
+    ]
+  },
+  "metadata": {
+    "application": "replication"
   }
 }

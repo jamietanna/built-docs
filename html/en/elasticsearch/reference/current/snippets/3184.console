@@ -1,8 +1,4 @@
-POST /_security/api_key/_bulk_update
+DELETE /_security/role
 {
-  "ids": [
-    "VuaCfGcBCdbkQm-e5aOx",
-    "H3_AhoIBA9hmeQJdg7ij"
-  ],
-  "role_descriptors": {}
+    "names": ["my_admin_role", "superuser"]
 }

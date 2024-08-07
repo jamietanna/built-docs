@@ -1,23 +1,37 @@
-POST _ml/data_frame/_evaluate
+POST /_ingest/pipeline/_simulate?verbose=true
 {
-  "index": "house_price_predictions",
-  "query": {
-      "bool": {
-        "filter": [
-          { "term":  { "ml.is_training": false } }
-        ]
+  "pipeline" :
+  {
+    "description": "_description",
+    "processors": [
+      {
+        "set" : {
+          "field" : "field2",
+          "value" : "_value2"
+        }
+      },
+      {
+        "set" : {
+          "field" : "field3",
+          "value" : "_value3"
+        }
       }
+    ]
   },
-  "evaluation": {
-    "regression": {
-      "actual_field": "price",
-      "predicted_field": "ml.price_prediction",
-      "metrics": {
-        "r_squared": {},
-        "mse": {},
-        "msle": {"offset": 10},
-        "huber": {"delta": 1.5}
+  "docs": [
+    {
+      "_index": "index",
+      "_id": "id",
+      "_source": {
+        "foo": "bar"
+      }
+    },
+    {
+      "_index": "index",
+      "_id": "id",
+      "_source": {
+        "foo": "rab"
       }
     }
-  }
+  ]
 }

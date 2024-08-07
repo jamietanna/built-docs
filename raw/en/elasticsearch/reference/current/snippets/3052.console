@@ -1,38 +1,13 @@
-PUT _application/search_application/my-app
+POST /_search 
 {
-  "indices": [ "index1", "index2" ],
-  "template": {
-    "script": {
-      "source": {
-        "query": {
-          "query_string": {
-            "query": "{{query_string}}",
-            "default_field": "{{default_field}}"
-          }
+    "size": 100, 
+    "query": {
+        "match" : {
+            "title" : "elasticsearch"
         }
-      },
-      "params": {
-        "query_string": "*",
-        "default_field": "*"
-      }
     },
-    "dictionary": {
-      "properties": {
-        "query_string": {
-          "type": "string"
-        },
-        "default_field": {
-          "type": "string",
-          "enum": [
-            "title",
-            "description"
-          ]
-        },
-        "additionalProperties": false
-      },
-      "required": [
-        "query_string"
-      ]
+    "pit": {
+	    "id":  "46ToAwMDaWR5BXV1aWQyKwZub2RlXzMAAAAAAAAAACoBYwADaWR4BXV1aWQxAgZub2RlXzEAAAAAAAAAAAEBYQADaWR5BXV1aWQyKgZub2RlXzIAAAAAAAAAAAwBYgACBXV1aWQyAAAFdXVpZDEAAQltYXRjaF9hbGw_gAAAAA==",
+	    "keep_alive": "1m" 
     }
-  }
 }

@@ -1,15 +1,8 @@
-GET /my-index-000001/_rank_eval
+GET /my-index-000001/_search?from=40&size=20
 {
-  "requests": [
-    {
-      "id": "JFK query",
-      "request": { "query": { "match_all": {} } },
-      "ratings": []
-    } ],
-  "metric": {
-    "dcg": {
-      "k": 20,
-      "normalize": false
+  "query": {
+    "term": {
+      "user.id": "kimchy"
     }
   }
 }

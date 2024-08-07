@@ -1,4 +1,23 @@
-PUT _synonyms/my-synonyms-set/test-1
+POST /_security/_query/api_key
 {
-  "synonyms": "hello, hi, howdy"
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": {
+        "term": {
+          "invalidated": true
+        }
+      }
+    }
+  },
+  "aggs": {
+    "invalidated_keys": {
+      "composite": {
+        "sources": [
+          { "username": { "terms": { "field": "username" } } },
+          { "key_name": { "terms": { "field": "name" } } }
+        ]
+      }
+    }
+  }
 }

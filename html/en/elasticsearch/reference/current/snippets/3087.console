@@ -1,8 +1,9 @@
-POST /_security/role_mapping/mapping2
+PUT place/_doc/1
 {
-  "roles": [ "user", "admin" ],
-  "enabled": true,
-  "rules": {
-     "field" : { "username" : [ "esadmin01", "esadmin02" ] }
+  "suggest": {
+    "input": [ "timmy's", "starbucks", "dunkin donuts" ],
+    "contexts": {
+      "place_type": [ "cafe", "food" ]                   
+    }
   }
 }

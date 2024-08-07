@@ -1,1 +1,7 @@
-GET _transform/ecommerce-customer-transform/_stats
+POST /_security/api_key/_bulk_update
+{
+  "ids": [
+    "VuaCfGcBCdbkQm-e5aOx",
+    "H3_AhoIBA9hmeQJdg7ij"
+  ]
+}

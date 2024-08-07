@@ -1,1 +1,1 @@
-GET /_security/role/my_admin_role
+GET my-index/_mvt/my-geo-field/15/5271/12710

@@ -1,14 +1,16 @@
-POST /sales*/_async_search?size=0
+PUT _ml/data_frame/analytics/loan_classification
 {
-  "sort": [
-    { "date": { "order": "asc" } }
-  ],
-  "aggs": {
-    "sale_date": {
-      "date_histogram": {
-        "field": "date",
-        "calendar_interval": "1d"
-      }
+  "source" : {
+    "index": "loan-applicants"
+  },
+  "dest" : {
+    "index": "loan-applicants-classified"
+  },
+  "analysis" : {
+    "classification": {
+      "dependent_variable": "label",
+      "training_percent": 75,
+      "num_top_classes": 2
     }
   }
 }

@@ -1,9 +1,6 @@
-PUT place/_doc/1
+PUT /_nodes/USpTGYaBSIKbgSUJR2Z9lg/shutdown
 {
-  "suggest": {
-    "input": [ "timmy's", "starbucks", "dunkin donuts" ],
-    "contexts": {
-      "place_type": [ "cafe", "food" ]                   
-    }
-  }
+  "type": "restart",
+  "reason": "Demonstrating how the node shutdown API works",
+  "allocation_delay": "20m"
 }

@@ -1,13 +1,16 @@
-POST _ml/trained_models/model2/_infer
+PUT _ml/datafeeds/datafeed-test-job?pretty
 {
-  "docs": [
-    {
-      "text_field": "<long text to extract answer>"
-    }
+  "indices": [
+    "kibana_sample_data_logs"
   ],
-  "inference_config": {
-    "question_answering": {
-      "question": "<question to be answered>"
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ]
     }
-  }
+  },
+  "job_id": "test-job"
 }

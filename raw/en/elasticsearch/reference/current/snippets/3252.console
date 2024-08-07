@@ -1,5 +1,7 @@
-POST _sql/translate
+POST /_security/oidc/authenticate
 {
-  "query": "SELECT * FROM library ORDER BY page_count DESC",
-  "fetch_size": 10
+  "redirect_uri" : "https://oidc-kibana.elastic.co:5603/api/security/oidc/callback?code=jtI3Ntt8v3_XvcLzCFGq&state=4dbrihtIAt3wBTwo6DxK-vdk-sSyDBV8Yf0AjdkdT5I",
+  "state" : "4dbrihtIAt3wBTwo6DxK-vdk-sSyDBV8Yf0AjdkdT5I",
+  "nonce" : "WaBPH0KqPVdG5HHdSxPRjfoZbXMCicm5v1OiAj0DUFM",
+  "realm" : "oidc1"
 }

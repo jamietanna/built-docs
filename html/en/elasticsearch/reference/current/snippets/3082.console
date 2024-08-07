@@ -1,33 +1,13 @@
-POST /_security/api_key
+POST music/_search
 {
-  "name": "my-api-key",
-  "expiration": "1d",  
-  "role_descriptors": {
-    "role-a": {
-      "cluster": ["all"],
-      "indices": [
-        {
-          "names": ["index-a*"],
-          "privileges": ["read"]
-        }
-      ]
-    },
-    "role-b": {
-      "cluster": ["all"],
-      "indices": [
-        {
-          "names": ["index-b*"],
-          "privileges": ["all"]
-        }
-      ]
-    }
-  },
-  "metadata": {
-    "application": "my-application",
-    "environment": {
-       "level": 1,
-       "trusted": true,
-       "tags": ["dev", "staging"]
+  "_source": "suggest",    
+  "suggest": {
+    "song-suggest": {
+      "prefix": "nir",
+      "completion": {
+        "field": "suggest",
+        "size": 5          
+      }
     }
   }
 }

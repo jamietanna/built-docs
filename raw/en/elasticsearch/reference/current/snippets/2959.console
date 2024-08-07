@@ -1,7 +1,6 @@
-PUT _scripts/my-stored-script
+POST
+_ml/anomaly_detectors/it_ops_new_logs/model_snapshots/1491852978/_update
 {
-  "script": {
-    "lang": "painless",
-    "source": "Math.log(_score * 2) + params['my_modifier']"
-  }
+  "description": "Snapshot 1",
+  "retain": true
 }

@@ -1,4 +1,4 @@
-POST /_security/api_key
+POST /_security/user/jacknich/_password
 {
-  "name": "my-api-key"
+  "password" : "new-test-password"
 }

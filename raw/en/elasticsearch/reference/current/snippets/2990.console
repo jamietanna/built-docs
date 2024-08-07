@@ -1,16 +1,4 @@
-POST _search
+POST _ml/trained_models/lang_ident_model_1/_infer
 {
-  "suggest": {
-    "text" : "tring out Elasticsearch",
-    "my-suggest-1" : {
-      "term" : {
-        "field" : "message"
-      }
-    },
-    "my-suggest-2" : {
-       "term" : {
-        "field" : "user"
-       }
-    }
-  }
+  "docs":[{"text": "The fool doth think he is wise, but the wise man knows himself to be a fool."}]
 }

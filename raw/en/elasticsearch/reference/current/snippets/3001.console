@@ -1,13 +1,4 @@
-POST music/_search
+POST _ml/trained_models/elastic__distilbert-base-uncased-finetuned-conll03-english/deployment/_update
 {
-  "_source": "suggest",    
-  "suggest": {
-    "song-suggest": {
-      "prefix": "nir",
-      "completion": {
-        "field": "suggest",
-        "size": 5          
-      }
-    }
-  }
+  "number_of_allocations": 4
 }

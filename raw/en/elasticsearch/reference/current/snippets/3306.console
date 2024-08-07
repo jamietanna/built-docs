@@ -1,20 +1,4 @@
-PUT /_watcher/watch/test_watch
+PUT /_snapshot/my_repository/source_snapshot/_clone/target_snapshot
 {
-  "trigger": {
-    "schedule": {
-      "hourly": {
-        "minute": [ 0, 5 ]
-        }
-      }
-  },
-  "input": {
-    "simple": {
-      "payload": {
-        "send": "yes"
-      }
-    }
-  },
-  "condition": {
-    "always": {}
-  }
+  "indices": "index_a,index_b"
 }

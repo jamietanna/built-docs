@@ -1,13 +1,14 @@
-PUT /_security/privilege
+POST music/_search?pretty
 {
-  "myapp": {
-    "read": {
-      "actions": [
-        "data:read/*" ,
-        "action:login" ],
-        "metadata": {
-          "description": "Read access to myapp"
+  "suggest": {
+    "song-suggest": {
+      "prefix": "nor",
+      "completion": {
+        "field": "suggest",
+        "fuzzy": {
+          "fuzziness": 2
         }
       }
     }
+  }
 }

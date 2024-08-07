@@ -1,4 +1,1 @@
-DELETE /_security/oauth2/token
-{
-  "realm_name" : "saml1"
-}
+POST /_security/api_key/yVGMr3QByxdh1MSaicYx,YoiMaqREw0YVpjn40iMg/_clear_cache

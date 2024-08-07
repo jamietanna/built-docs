@@ -1,15 +1,14 @@
-GET /my-index-000001/_rank_eval
+POST /sales*/_async_search?size=0
 {
-  "requests": [
-    {
-      "id": "JFK query",
-      "request": { "query": { "match_all": {} } },
-      "ratings": []
-    } ],
-  "metric": {
-    "expected_reciprocal_rank": {
-      "maximum_relevance": 3,
-      "k": 20
+  "sort": [
+    { "date": { "order": "asc" } }
+  ],
+  "aggs": {
+    "sale_date": {
+      "date_histogram": {
+        "field": "date",
+        "calendar_interval": "1d"
+      }
     }
   }
 }

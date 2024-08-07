@@ -1,35 +1,16 @@
-POST /_security/role_mapping/mapping8
+POST _search?typed_keys
 {
-  "roles": [ "superuser" ],
-  "enabled": true,
-  "rules": {
-    "all": [
-      {
-        "any": [
-          {
-            "field": {
-              "dn": "*,ou=admin,dc=example,dc=com"
-            }
-          },
-          {
-            "field": {
-              "username": [ "es-admin", "es-system" ]
-            }
-          }
-        ]
-      },
-      {
-        "field": {
-          "groups": "cn=people,dc=example,dc=com"
-        }
-      },
-      {
-        "except": {
-          "field": {
-            "metadata.terminated_date": null
-          }
-        }
+  "suggest": {
+    "text" : "some test mssage",
+    "my-first-suggester" : {
+      "term" : {
+        "field" : "message"
       }
-    ]
+    },
+    "my-second-suggester" : {
+      "phrase" : {
+        "field" : "message"
+      }
+    }
   }
 }

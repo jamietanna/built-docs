@@ -1,8 +1,5 @@
-POST /_security/role_mapping/mapping3
+PUT place_path_category/_doc/1
 {
-  "roles": [ "ldap-user" ],
-  "enabled": true,
-  "rules": {
-    "field" : { "realm.name" : "ldap1" }
-  }
+  "suggest": ["timmy's", "starbucks", "dunkin donuts"],
+  "cat": ["cafe", "food"]
 }

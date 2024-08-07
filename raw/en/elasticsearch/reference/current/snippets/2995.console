@@ -1,21 +1,9 @@
-POST test/_search
+POST _ml/trained_models/cross-encoder__ms-marco-tinybert-l-2-v2/_infer
 {
-  "suggest": {
-    "text" : "obel prize",
-    "simple_phrase" : {
-      "phrase" : {
-        "field" : "title.trigram",
-        "size" : 1,
-        "direct_generator" : [ {
-          "field" : "title.trigram",
-          "suggest_mode" : "always"
-        }, {
-          "field" : "title.reverse",
-          "suggest_mode" : "always",
-          "pre_filter" : "reverse",
-          "post_filter" : "reverse"
-        } ]
-      }
+  "docs":[{ "text_field": "Berlin has a population of 3,520,031 registered inhabitants in an area of 891.82 square kilometers."}, {"text_field": "New York City is famous for the Metropolitan Museum of Art."}],
+  "inference_config": {
+    "text_similarity": {
+      "text": "How many people live in Berlin?"
     }
   }
 }

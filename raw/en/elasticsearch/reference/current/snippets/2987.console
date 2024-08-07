@@ -1,1 +1,1 @@
-GET /my-index-000001/_search_shards?routing=foo,bar
+DELETE _ml/trained_models/regression-job-one-1574775307356

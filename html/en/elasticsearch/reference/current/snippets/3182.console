@@ -1,12 +1,4 @@
-POST /_security/api_key
+DELETE /_security/role
 {
-  "name": "my-other-api-key",
-  "metadata": {
-    "application": "my-application",
-    "environment": {
-       "level": 2,
-       "trusted": true,
-       "tags": ["dev", "staging"]
-    }
-  }
+    "names": ["my_admin_role", "my_user_role"]
 }
