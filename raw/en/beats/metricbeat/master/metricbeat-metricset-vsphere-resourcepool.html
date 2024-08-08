@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>vSphere host metricset | Metricbeat Reference [master] | Elastic</title>
-<meta class="elastic" name="content" content="vSphere host metricset | Metricbeat Reference [master]">
+<title>vSphere resourcepool metricset | Metricbeat Reference [master] | Elastic</title>
+<meta class="elastic" name="content" content="vSphere resourcepool metricset | Metricbeat Reference [master]">
 
 <link rel="home" href="index.html" title="Metricbeat Reference [master]"/>
 <link rel="up" href="metricbeat-module-vsphere.html" title="vSphere module"/>
-<link rel="prev" href="metricbeat-metricset-vsphere-datastore.html" title="vSphere datastore metricset"/>
-<link rel="next" href="metricbeat-metricset-vsphere-resourcepool.html" title="vSphere resourcepool metricset"/>
+<link rel="prev" href="metricbeat-metricset-vsphere-host.html" title="vSphere host metricset"/>
+<link rel="next" href="metricbeat-metricset-vsphere-virtualmachine.html" title="vSphere virtualmachine metricset"/>
 <meta class="elastic" name="product_version" content="master"/>
 <meta class="elastic" name="product_name" content="Metricbeat"/>
 <meta class="elastic" name="website_area" content="documentation"/>
@@ -23,10 +23,10 @@ This documentation contains work-in-progress information for future Elastic Stac
 </div>
 <div class="navheader">
 <span class="prev">
-<a href="metricbeat-metricset-vsphere-datastore.html">« vSphere datastore metricset</a>
+<a href="metricbeat-metricset-vsphere-host.html">« vSphere host metricset</a>
 </span>
 <span class="next">
-<a href="metricbeat-metricset-vsphere-resourcepool.html">vSphere resourcepool metricset »</a>
+<a href="metricbeat-metricset-vsphere-virtualmachine.html">vSphere virtualmachine metricset »</a>
 </span>
 </div>
 <div class="book" lang="en">
@@ -38,20 +38,26 @@ This documentation contains work-in-progress information for future Elastic Stac
 <span class="chevron-right">›</span><span class="breadcrumb-link"><a href="metricbeat-module-vsphere.html">vSphere module</a></span>
 </div>
 <div>
-<div><h1 class="title"><a id="id-1"></a>vSphere host metricset</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/beats/edit/main/metricbeat/module/vsphere/host/_meta/docs.asciidoc">edit</a></div>
+<div><h1 class="title"><a id="id-1"></a>vSphere resourcepool metricset</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/beats/edit/main/metricbeat/module/vsphere/resourcepool/_meta/docs.asciidoc">edit</a></div>
 </div>
 <!--EXTRA-->
 </div>
 <div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="metricbeat-metricset-vsphere-host"></a>vSphere host metricset<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/beats/edit/main/metricbeat/module/vsphere/host/_meta/docs.asciidoc">edit</a></h2>
+<h2 class="title"><a id="metricbeat-metricset-vsphere-resourcepool"></a>vSphere resourcepool metricset<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/beats/edit/main/metricbeat/module/vsphere/resourcepool/_meta/docs.asciidoc">edit</a></h2>
 </div></div></div>
-<p>This is the <code class="literal">host</code> metricset of the vSphere module.</p>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>This functionality is in beta and is subject to change. The design and code is less mature than official GA features and is being provided as-is with no warranties. Beta features are not subject to the support SLA of official GA features.</p>
+</div>
+</div>
+<p>This is the resourcepool metricset of the module vsphere.</p>
 <p>This is a default metricset. If the host module is unconfigured, this metricset is enabled by default.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_fields_250"></a>Fields</h3>
+<h3 class="title"><a id="_fields_251"></a>Fields</h3>
 </div></div></div>
 <p>For a description of each field in the metricset, see the
 <a class="xref" href="exported-fields-vsphere.html" title="vSphere fields">exported fields</a> section.</p>
@@ -59,51 +65,58 @@ This documentation contains work-in-progress information for future Elastic Stac
 <div class="pre_wrapper lang-json">
 <div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">{
-    "@timestamp": "2022-09-06T06:41:22.128Z",
+    "@timestamp": "2024-08-06T10:38:51.952Z",
     "metricset": {
-      "name": "host",
+      "name": "resourcepool",
       "period": 10000
     },
     "service": {
-      "address": "https://localhost:8989/sdk",
-      "type": "vsphere"
+      "type": "vsphere",
+      "address": "https://localhost:8989/sdk"
     },
     "event": {
+      "dataset": "vsphere.resourcepool",
       "module": "vsphere",
-      "duration": 23519250,
-      "dataset": "vsphere.host"
+      "duration": 57462824
     },
     "vsphere": {
-      "host": {
+      "resourcepool": {
+        "name": "Resources",
+        "status": "green",
         "cpu": {
-          "used": {
-            "mhz": 67
+          "active": {
+            "average": {
+              "pct": 0
+            },
+            "max": {
+              "pct": 0
+            }
           },
-          "total": {
-            "mhz": 4588
+          "entitlement": {
+            "mhz": 0
           },
-          "free": {
-            "mhz": 4521
+          "usage": {
+            "pct": 0,
+            "mhz": 2018
           }
         },
         "memory": {
-          "free": {
-            "bytes": 2822230016
+          "entitlement": {
+            "mhz": 0
           },
-          "total": {
-            "bytes": 4294430720
+          "usage": {
+            "pct": 0
           },
-          "used": {
-            "bytes": 1472200704
+          "shared": {
+            "bytes": 1078817000
+          },
+          "swap": {
+            "bytes": 0
           }
-        },
-        "network_names": [
-          "VM Network"
-        ],
-        "name": "DC0_H0"
+        }
       }
     }
-}</pre>
+  }</pre>
 </div>
 </div>
 
@@ -111,10 +124,10 @@ This documentation contains work-in-progress information for future Elastic Stac
 </div>
 </div><div class="navfooter">
 <span class="prev">
-<a href="metricbeat-metricset-vsphere-datastore.html">« vSphere datastore metricset</a>
+<a href="metricbeat-metricset-vsphere-host.html">« vSphere host metricset</a>
 </span>
 <span class="next">
-<a href="metricbeat-metricset-vsphere-resourcepool.html">vSphere resourcepool metricset »</a>
+<a href="metricbeat-metricset-vsphere-virtualmachine.html">vSphere virtualmachine metricset »</a>
 </span>
 </div>
 </body>
